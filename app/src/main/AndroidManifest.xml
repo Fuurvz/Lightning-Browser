@@ -46,7 +46,11 @@
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
-
+        <service
+            android:name=".service.MediaPlaybackService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
         <activity
             android:name="acr.browser.lightning.DefaultBrowserActivity"
             android:alwaysRetainTaskState="true"
