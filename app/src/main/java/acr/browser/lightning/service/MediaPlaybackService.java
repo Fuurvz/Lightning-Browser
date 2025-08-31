@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import androidx.core.app.NotificationCompat;
+import acr.browser.lightning.R;
 
 public class MediaPlaybackService extends Service {
     private static final String CHANNEL_ID = "media_playback_channel";
@@ -40,15 +41,17 @@ public class MediaPlaybackService extends Service {
             );
             channel.setDescription("Keeps audio playing in background");
             NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+            }
         }
     }
 
     private Notification createNotification() {
         return new NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("Lightning Browser")
+            .setContentTitle(getString(R.string.app_name))
             .setContentText("Playing audio in background")
-            .setSmallIcon(R.drawable.ic_audio) // Use an existing icon or add a new one
+            .setSmallIcon(R.drawable.ic_launcher)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build();
     }
