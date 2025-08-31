@@ -7,6 +7,11 @@
             android:key="cb_swapdrawers"
             android:title="@string/swap_bookmarks_and_tabs"/>
         <SwitchPreference
+            android:key="background_playback"
+            android:title="@string/background_playback_title"
+            android:summary="@string/background_playback_summary"
+            android:defaultValue="true" />
+        <SwitchPreference
             android:defaultValue="false"
             android:key="fullScreenOption"
             android:title="@string/fullScreenOption" />
