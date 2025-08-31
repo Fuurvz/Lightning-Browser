@@ -27,6 +27,8 @@ import javax.inject.Singleton
  */
 @Singleton
 class UserPreferences @Inject constructor(
+    public static final String BACKGROUND_PLAYBACK = "background_playback";
+    editor.putBoolean(BACKGROUND_PLAYBACK, false);
     @UserPrefs preferences: SharedPreferences,
     screenSize: ScreenSize
 ) {
@@ -350,3 +352,4 @@ private const val SEARCH_SUGGESTIONS = "searchSuggestionsChoice"
 private const val HOSTS_SOURCE = "hostsSource"
 private const val HOSTS_LOCAL_FILE = "hostsLocalFile"
 private const val HOSTS_REMOTE_FILE = "hostsRemoteFile"
+
