@@ -25,3 +25,15 @@ private boolean isPlayingAudio() {
     // based on actual audio detection from WebView
     return true; // Assume audio is playing when this is called
 }
+
+@Override
+protected void onPause() {
+    super.onPause();
+    handleBackgroundPlayback();
+}
+
+@Override
+protected void onResume() {
+    super.onResume();
+    stopBackgroundPlayback();
+}
